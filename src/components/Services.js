@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 // CSS styling
+// CSS styling
 const PageWrapper = styled.div`
   position: relative;
   width: 100%;
@@ -35,6 +36,7 @@ const Title = styled.h1`
   font-size: calc(2rem + 2vw);
   text-align: center;
   color: #fff;
+  margin: 0; // Prevent margin collapse
 `;
 
 const Punchline = styled.h2`
@@ -83,6 +85,7 @@ const JourneySection = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr; /* Stack columns on mobile */
+    padding: 2rem; /* Adjust padding for mobile */
   }
 `;
 
@@ -95,12 +98,20 @@ const TextBlock = styled.div`
   h2 {
     font-size: 2rem;
     color: #333;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem; /* Adjust heading size on mobile */
+    }
   }
 
   p {
     font-size: 1.2rem;
     line-height: 1.8;
     color: #555;
+
+    @media (max-width: 768px) {
+      font-size: 1rem; /* Adjust paragraph size on mobile */
+    }
   }
 `;
 
@@ -114,7 +125,7 @@ const ServicesList = styled.ul`
 
 const TextBlockWhite = styled.div`
   display: grid;
-  grid-template-columns: 1fr ;
+  grid-template-columns: 1fr;
   gap: 2rem;
   padding: 2rem;
   padding-left: 5rem;
@@ -123,10 +134,14 @@ const TextBlockWhite = styled.div`
   h1 {
     font-size: 3rem;
     color: #f4f4f4;
+
+    @media (max-width: 768px) {
+      font-size: 2rem; /* Adjust heading size on mobile */
+    }
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr; /* Stack columns on mobile */
+    padding-left: 1rem; /* Adjust padding for mobile */
   }
 `;
 
