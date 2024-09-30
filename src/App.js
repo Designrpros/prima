@@ -32,6 +32,8 @@ const Toolbar = styled.div`
   nav {
     display: flex;
     gap: 10px;
+    overflow-x: auto; /* Enable horizontal scrolling on small screens */
+    white-space: nowrap; /* Prevent items from wrapping to the next line */
   }
 
   h1 {
@@ -48,6 +50,8 @@ const Toolbar = styled.div`
     padding: 0.5rem;
     nav {
       gap: 5px;
+      /* Additional styles for mobile */
+      padding: 0 10px; /* Add padding to prevent items from being too close to the edges */
     }
     h1 {
       font-size: 1rem;
