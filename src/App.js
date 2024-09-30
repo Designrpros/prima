@@ -34,6 +34,13 @@ const Toolbar = styled.div`
     gap: 10px;
     overflow-x: auto; /* Enable horizontal scrolling on small screens */
     white-space: nowrap; /* Prevent items from wrapping to the next line */
+    
+    /* Hide scrollbar */
+    &::-webkit-scrollbar {
+      display: none; /* For Chrome, Safari, and Opera */
+    }
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
   }
 
   h1 {

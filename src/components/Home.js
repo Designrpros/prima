@@ -3,54 +3,53 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import emailjs from 'emailjs-com';
 import { Helmet } from 'react-helmet';
-
-// Importing images and icons (keep your current assets here)
 import VR from './Images/VR.png';
-import Studio51 from './Studio51.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
-// CSS styling (similar to what you already have)
-
 const PageWrapper = styled.div`
-  position: relative;
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;
   background-color: #4B6079;
 `;
 
 // Full-screen introduction section
 const FullScreenIntro = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 95vh;
-  width: 100%;
   background-color: #4B6079;
   padding: 2rem;
+  color: #fff;
 `;
 
 const Title = styled.h1`
   font-size: calc(2rem + 2vw);
-  grid-column: 1 / -1;
   text-align: center;
   color: #fff;
 `;
 
 const Punchline = styled.h2`
   font-size: calc(1rem + 1vw);
-  grid-column: 1 / -1;
   text-align: center;
-    color: #fff;
+  color: #fff;
+  margin: 0.5rem 0; /* Adjust margins for better spacing */
+
+  @media (max-width: 768px) {
+    font-size: calc(0.8rem + 1vw); /* Adjust font size for smaller screens */
+  }
 `;
 
 const Heading = styled.h1`
   font-size: calc(2rem + 2vw);
-  grid-column: 1 / -1;
   text-align: center;
+  margin: 2rem 0; /* Add margin for spacing */
+
+  @media (max-width: 768px) {
+    font-size: calc(1.5rem + 1.5vw); /* Adjust font size for smaller screens */
+  }
 `;
 
 const Paragraph = styled.p`
@@ -58,6 +57,10 @@ const Paragraph = styled.p`
   line-height: 1.5;
   margin: 1rem 0;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
 `;
 
 const ScrollArrow = styled.div`
@@ -69,7 +72,7 @@ const ScrollArrow = styled.div`
 
   .chevron-icon {
     font-size: 24px;
-    color: #333;
+    color: #fff;
     animation: bounce 2s infinite;
   }
 
@@ -88,7 +91,6 @@ const AnimatedLogo = styled(motion.img)`
   }
 `;
 
-
 const ServicesSection = styled.div`
   background-color: #f4f4f4;
   color: #444;
@@ -98,6 +100,11 @@ const ServicesSection = styled.div`
   width: 90%;
   max-width: 800px;
   text-align: left;
+
+  @media (max-width: 768px) {
+    padding: 1rem; /* Reduced padding on smaller screens */
+    margin: 1rem auto; /* Reduce margin to fit smaller screens */
+  }
 `;
 
 const List = styled.ul`
@@ -112,6 +119,10 @@ const ListItem = styled.li`
   border-radius: 5px;
   margin-bottom: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 0.8rem; /* Adjust padding for smaller screens */
+  }
 `;
 
 // Home component
@@ -127,8 +138,8 @@ const Home = () => {
 
       <PageWrapper>
         <FullScreenIntro>
-        <Title>PRIMA</Title>
-        <Punchline>Digitale verktøy og opplevelser for eldre</Punchline>
+          <Title>PRIMA</Title>
+          <Punchline>Digitale verktøy og opplevelser for eldre</Punchline>
           <AnimatedLogo src={VR} alt="VR Logo" />
           <ScrollArrow>
             <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
@@ -144,6 +155,8 @@ const Home = () => {
             <ListItem>PRIMA vil følge en tjenestedesignprosess som går gjennom alle fasene i den doble diamanten, med utgangspunkt i intervjuer og observasjoner.</ListItem>
           </List>
         </ServicesSection>
+
+        {/* Additional ServicesSection components remain unchanged */}
 
         <ServicesSection>
           <Heading>Tjenestedesign</Heading>
@@ -204,7 +217,6 @@ const Home = () => {
             <ListItem><strong>Rød og grønn tilbakemelding (Red and green feedback):</strong> En enkel måte å gi tilbakemelding på, der rød betyr hva som kan forbedres, og grønn hva som fungerer godt.</ListItem>
           </List>
         </ServicesSection>
-
       </PageWrapper>
     </>
   );

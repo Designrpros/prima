@@ -9,24 +9,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 // CSS styling
-// CSS styling
 const PageWrapper = styled.div`
-  position: relative;
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;
   background-color: #4B6079;
 `;
 
 // Full-screen introduction section
 const FullScreenIntro = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 95vh;
-  width: 100%;
   background-color: #4B6079;
   padding: 2rem;
   color: #fff;
@@ -36,7 +31,6 @@ const Title = styled.h1`
   font-size: calc(2rem + 2vw);
   text-align: center;
   color: #fff;
-  margin: 0; // Prevent margin collapse
 `;
 
 const Punchline = styled.h2`
@@ -44,6 +38,10 @@ const Punchline = styled.h2`
   text-align: center;
   color: #fff;
   margin-top: 10px;
+
+  @media (max-width: 768px) {
+    font-size: calc(1rem + 1.5vw); /* Adjust font size on mobile */
+  }
 `;
 
 const ScrollArrow = styled.div`
